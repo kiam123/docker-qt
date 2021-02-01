@@ -4,7 +4,7 @@ FROM qt_base
 #======================================
 # Add ti-sdk
 #======================================
-ADD ti-sdk-03.02.zip /opt
+COPY ti-sdk-03.02.zip /opt
 
 #======================================
 # Settup workdir
@@ -12,5 +12,6 @@ ADD ti-sdk-03.02.zip /opt
 WORKDIR /home/test
 
 RUN mkdir /home/test/project
+RUN unzip /opt/ti-sdk-03.02.zip
 
 VOLUME  ["/home/test/project"]

@@ -35,6 +35,8 @@ RUN apt-get -qqy update \
     iputils-ping \
     net-tools \
     psmisc \
+    build-essential \
+    python2 \
   && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
 
 #===================
