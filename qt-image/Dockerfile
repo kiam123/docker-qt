@@ -2,20 +2,15 @@ FROM qt_base
 
 
 #======================================
-# Add Node web
+# Add ti-sdk
 #======================================
-COPY index.nginx-debian1 index.nginx-debian2 /
-
-
-#======================================
-# Add script
-#======================================
-COPY start_nginx.sh genera_web.sh /opt/bin/
-RUN chmod +x /opt/bin/genera_web.sh
+# ADD ti-sdk-03.02.zip /opt
 
 #======================================
-# Add Supervisor configuration file
+# Settup workdir
 #======================================
-COPY nginx_service.conf genera_service.conf /etc/supervisor/conf.d/
+# WORKDIR /home/test
 
-ENV name=Node1
+RUN mkdir /home/test/project
+
+# VOLUME  ["/home/test/project"]

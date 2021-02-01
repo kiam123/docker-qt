@@ -1,6 +1,6 @@
 FROM ubuntu:bionic-20191029
 
-ARG web_port=80
+ARG ssh_port=22
 ARG time_zone="Asia/Taipei"
 
 #================================================
@@ -87,6 +87,8 @@ RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so
 ENV NOTVISIBLE "in users profile"
 RUN echo "export VISIBLE=now" >> /etc/profile
 
+# # SSH change port
+# RUN sed -i "s/#Port 80/#Port $ssh_port/" /etc/ssh/sshd_config
 
 RUN  mkdir -p /var/run/supervisor /var/log/supervisor \
   && chmod -R 777 /var/run/supervisor /var/log/supervisor /etc/passwd \
@@ -97,8 +99,6 @@ RUN  mkdir -p /var/run/supervisor /var/log/supervisor \
 # Run the following commands as non-privileged user
 # ===================================================
 
-
-EXPOSE ${web_port}
-
+EXPOSE ${ssh_port}
 
 CMD ["/opt/bin/entry_point.sh"]
