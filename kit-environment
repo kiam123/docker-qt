@@ -1,0 +1,54 @@
+AR=arm-linux-gnueabihf-ar
+AS=arm-linux-gnueabihf-as
+CC=arm-linux-gnueabihf-gcc
+CFLAGS= -march=armv7-a -marm -mfpu=neon  -mfloat-abi=hard --sysroot=/opt/ti-sdk/linux-devkit/sysroots/armv7ahf-neon-linux-gnueabi
+CONFIGURE_FLAGS=--target=arm-linux-gnueabi --host=arm-linux-gnueabi --build=x86_64-linux --with-libtool-sysroot=/opt/ti-sdk/linux-devkit/sysroots/armv7ahf-neon-linux-gnueabi
+CONFIG_SITE=/opt/ti-sdk/linux-devkit/site-config-armv7ahf-neon-linux-gnueabi
+CPATH=/opt/ti-sdk/linux-devkit/sysroots/armv7ahf-neon-linux-gnueabi/usr/include:
+CPP=arm-linux-gnueabihf-gcc -E
+CPPFLAGS= -march=armv7-a -marm -mfpu=neon  -mfloat-abi=hard --sysroot=/opt/ti-sdk/linux-devkit/sysroots/armv7ahf-neon-linux-gnueabi
+CXX=arm-linux-gnueabihf-g++
+CXXFLAGS= -march=armv7-a -marm -mfpu=neon  -mfloat-abi=hard --sysroot=/opt/ti-sdk/linux-devkit/sysroots/armv7ahf-neon-linux-gnueabi
+GDB=arm-linux-gnueabihf-gdb
+LDFLAGS= --sysroot=/opt/ti-sdk/linux-devkit/sysroots/armv7ahf-neon-linux-gnueabi
+NM=arm-linux-gnueabihf-nm
+OBJCOPY=arm-linux-gnueabihf-objcopy
+OBJDUMP=arm-linux-gnueabihf-objdump
+OECORE_ACLOCAL_OPTS=-I /opt/ti-sdk/linux-devkit/sysroots/x86_64-arago-linux/usr/share/aclocal
+OECORE_DISTRO_VERSION="2016.08"
+OECORE_NATIVE_SYSROOT=/opt/ti-sdk/linux-devkit/sysroots/x86_64-arago-linux
+OECORE_SDK_VERSION="2016.08"
+OECORE_TARGET_SYSROOT=/opt/ti-sdk/linux-devkit/sysroots/armv7ahf-neon-linux-gnueabi
+OE_QMAKE_AR=arm-linux-gnueabihf-ar
+OE_QMAKE_CC=arm-linux-gnueabihf-gcc
+OE_QMAKE_CFLAGS= -march=armv7-a -marm -mfpu=neon  -mfloat-abi=hard --sysroot=/opt/ti-sdk/linux-devkit/sysroots/armv7ahf-neon-linux-gnueabi
+OE_QMAKE_CXX=arm-linux-gnueabihf-g++
+OE_QMAKE_CXXFLAGS= -march=armv7-a -marm -mfpu=neon  -mfloat-abi=hard --sysroot=/opt/ti-sdk/linux-devkit/sysroots/armv7ahf-neon-linux-gnueabi
+OE_QMAKE_HOST_BINDIR_QT=/opt/ti-sdk/linux-devkit/sysroots/x86_64-arago-linux/usr/bin/qt5/
+OE_QMAKE_INCDIR_QT=/opt/ti-sdk/linux-devkit/sysroots/armv7ahf-neon-linux-gnueabi/usr/include/qt5
+OE_QMAKE_LDFLAGS= --sysroot=/opt/ti-sdk/linux-devkit/sysroots/armv7ahf-neon-linux-gnueabi
+OE_QMAKE_LIBDIR_QT=/opt/ti-sdk/linux-devkit/sysroots/armv7ahf-neon-linux-gnueabi/usr/lib
+OE_QMAKE_LINK=arm-linux-gnueabihf-g++
+OE_QMAKE_MOC=/opt/ti-sdk/linux-devkit/sysroots/x86_64-arago-linux/usr/bin/qt5/moc
+OE_QMAKE_QDBUSCPP2XML=/opt/ti-sdk/linux-devkit/sysroots/x86_64-arago-linux/usr/bin/qt5/qdbuscpp2xml
+OE_QMAKE_QDBUSXML2CPP=/opt/ti-sdk/linux-devkit/sysroots/x86_64-arago-linux/usr/bin/qt5/qdbusxml2cpp
+OE_QMAKE_QT_CONFIG=/opt/ti-sdk/linux-devkit/sysroots/armv7ahf-neon-linux-gnueabi/usr/lib/qt5/mkspecs/qconfig.pri
+OE_QMAKE_RCC=/opt/ti-sdk/linux-devkit/sysroots/x86_64-arago-linux/usr/bin/qt5/rcc
+OE_QMAKE_STRIP=export
+OE_QMAKE_UIC=/opt/ti-sdk/linux-devkit/sysroots/x86_64-arago-linux/usr/bin/qt5/uic
+OE_QMAKE_UIC3=/opt/ti-sdk/linux-devkit/sysroots/x86_64-arago-linux/usr/bin/qt5/uic3
+PATH=/opt/ti-sdk/linux-devkit/sysroots/x86_64-arago-linux/usr/bin/qt5:/opt/ti-sdk/linux-devkit/sysroots/x86_64-arago-linux/usr/bin:/home/ericchen/bin:/home/ericchen/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+PKG_CONFIG_ALLOW_SYSTEM_LIBS=1
+PKG_CONFIG_PATH=/opt/ti-sdk/linux-devkit/sysroots/armv7ahf-neon-linux-gnueabi/usr/lib/pkgconfig
+PKG_CONFIG_SYSROOT_DIR=/opt/ti-sdk/linux-devkit/sysroots/armv7ahf-neon-linux-gnueabi
+PS1=\[\e[32;1m\][linux-devkit]\[\e[0m\]:\w> 
+QMAKESPEC=/opt/ti-sdk/linux-devkit/sysroots/armv7ahf-neon-linux-gnueabi/usr/lib/qt5/mkspecs/linux-oe-g++
+RANLIB=arm-linux-gnueabihf-ranlib
+REAL_MULTIMACH_TARGET_SYS=armv7ahf-neon-linux-gnueabi
+SDK_PATH=/opt/ti-sdk/linux-devkit
+SDK_PATH_NATIVE=/opt/ti-sdk/linux-devkit/sysroots/x86_64-arago-linux
+SDK_PATH_TARGET=/opt/ti-sdk/linux-devkit/sysroots/armv7ahf-neon-linux-gnueabi
+SDK_SYS=x86_64-arago-linux
+STRIP=arm-linux-gnueabihf-strip
+TOOLCHAIN_PREFIX=arm-linux-gnueabihf-
+TOOLCHAIN_SYS=arm-linux-gnueabihf
