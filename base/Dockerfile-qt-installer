@@ -1,0 +1,11 @@
+FROM qt_base
+
+# 指定5.14.2版，需拔網絡線才能offline安裝(下載需要大約1小時45分或更久)
+RUN wget https://download.qt.io/archive/qt/5.14/5.14.2/qt-opensource-linux-x64-5.14.2.run -O qt-creator.run
+# 官方下載
+#RUN  wget https://d13lb3tujbc8s0.cloudfront.net/onlineinstallers/qt-unified-linux-x64-4.0.1-1-online.run -O qt-creator.run
+# 官方提供鏈接下載
+#RUN wget http://download.qt.io/official_releases/online_installers/qt-unified-linux-x64-online.run -O qt-creator.run
+
+RUN chmod +x qt-creator.run
+CMD ./qt-creator.run

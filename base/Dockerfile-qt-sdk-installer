@@ -1,0 +1,9 @@
+FROM qt_installer/finished
+
+
+RUN apt-get -qqy update \
+  && apt-get -qqy --no-install-recommends install \
+      wget http://software-dl.ti.com/processor-sdk-linux/esd/AM57X/03_02_00_05/exports/ti-processor-sdk-linux-am57xx-evm-03.02.00.05-Linux-x86-Install.bin 
+
+RUN chmod +x ti-processor-sdk-linux-am57xx-evm-03.02.00.05-Linux-x86-Install.bin
+CMD ./ti-processor-sdk-linux-am57xx-evm-03.02.00.05-Linux-x86-Install.bin
