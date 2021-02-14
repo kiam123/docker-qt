@@ -8,4 +8,6 @@ RUN wget https://download.qt.io/archive/qt/5.14/5.14.2/qt-opensource-linux-x64-5
 #RUN wget http://download.qt.io/official_releases/online_installers/qt-unified-linux-x64-online.run -O qt-creator.run
 
 RUN chmod +x qt-creator.run
+RUN chmod +x /opt/Qt5.14.2/Tools/QtCreator/bin/qtcreator.sh
+
 CMD ./qt-creator.run
