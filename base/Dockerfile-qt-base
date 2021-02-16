@@ -1,4 +1,4 @@
-FROM ubuntu:bionic-20191029
+FROM ubuntu:xenial-20210114
 
 ARG time_zone="Asia/Taipei"
 
@@ -34,6 +34,20 @@ RUN apt-get -qqy update \
     x11vnc \ 
     libxkbcommon-x11-0 \
     xvfb \
+  && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
+
+
+##################################
+#
+# QT lib
+# error while loading shared libraries: libgthread-2.0.so.0: cannot open shared object file: No such file or directory
+# http://xhyumiracle.com/error-while-loading-shared-libraries-libgthread-2-0-so-0/
+#
+##################################
+RUN apt-get -qqy update \
+  && apt-get -qqy --no-install-recommends install \
+    libglib2.0-0 \
+    libgl1-mesa-dev \
   && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
 
 

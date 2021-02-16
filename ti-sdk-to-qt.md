@@ -2,11 +2,11 @@
 註：建議把安裝位置名稱縮短
 
 舉例
-專案位置：/home/ericchen/MyWorkspace/aphcontroller/
-SDK安裝位置：/home/ericchen/ti-processor-sdk-linux-am57xx-evm-03.01.00.06/
+專案位置：/home/test/MyWorkspace/ti-process-project/
+SDK安裝位置：/opt/ti-processor-sdk-linux-am57xx-evm-03.01.00.06/
 
 開啟
-/home/ericchen/ti-processor-sdk-linux-am57xx-evm-03.01.00.06/linux-devkit/sysroots/armv7ahf-neon-linux-gnueabi/usr/lib/qt5/mkspecs/linux-oe-g++
+/opt/ti-processor-sdk-linux-am57xx-evm-03.01.00.06/linux-devkit/sysroots/armv7ahf-neon-linux-gnueabi/usr/lib/qt5/mkspecs/linux-oe-g++
 編輯文件qmake.conf
 把include(../oe-device-extra.pri)註解掉(用#號)
 因為這個檔案不存在
@@ -14,7 +14,7 @@ SDK安裝位置：/home/ericchen/ti-processor-sdk-linux-am57xx-evm-03.01.00.06/
 ===============================
 使用Termainal：
 source ~/ti-processor-sdk-linux-am57xx-evm-03.01.00.06/linux-devkit/environment-setup
-cd ~/MyWorkspace/aphcontroller/
+cd ~/MyWorkspace/ti-process-project/
 make clean && make distclean
 qmake -o ../build-project-aph/
 make -C ../build-project-aph/ 2> ../project-aph-Warnings
@@ -30,29 +30,29 @@ make distclean用於清除qmake的Makefile
 編輯此說明的qt.conf和kit-environment，把家目錄和SDK安裝路徑改成你的路徑
 
 開啟
-/home/ericchen/ti-processor-sdk-linux-am57xx-evm-03.01.00.06/linux-devkit/sysroots/x86_64-arago-linux/usr/bin/qt5/
+/opt/ti-sdk-03.02/linux-devkit/sysroots/x86_64-arago-linux/usr/bin/qt5/
 將qt.conf重新命名，如qt.conf.original，把改好的qt.conf放入資料夾
 
 開啟Qt Creator
 Tools > Options > Build & Run >
 
 Qt Versions > Add
-/home/ericchen/ti-processor-sdk-linux-am57xx-evm-03.01.00.06/linux-devkit/sysroots/x86_64-arago-linux/usr/bin/qt5/qmake
-Version name: 把括號內改成ti-sdk (自訂)
+/opt/ti-sdk-03.02/linux-devkit/sysroots/x86_64-arago-linux/usr/bin/qt5/qmake
+Version name: 把括號內改成ti-sdk %{Qt:Version} (qt5)
 
 Compilers >
 Add > GCC > C
     Name: 可以取名為ti-gcc
-    Compiler path: /home/ericchen/ti-processor-sdk-linux-am57xx-evm-03.01.00.06/linux-devkit/sysroots/x86_64-arago-linux/usr/bin/arm-linux-gnueabihf-gcc
+    Compiler path: /opt/ti-sdk-03.02/linux-devkit/sysroots/x86_64-arago-linux/usr/bin/arm-linux-gnueabihf-gcc
     ABI: arm-linux-generic-elf-32bit
 Add > GCC > C++
     Name: 可以取名為ti-g++
-    Compiler path: /home/ericchen/ti-processor-sdk-linux-am57xx-evm-03.01.00.06/linux-devkit/sysroots/x86_64-arago-linux/usr/bin/arm-linux-gnueabihf-g++
+    Compiler path: /opt/ti-sdk-03.02/linux-devkit/sysroots/x86_64-arago-linux/usr/bin/arm-linux-gnueabihf-g++
     ABI: arm-linux-generic-elf-32bit
     
 Debuggers > Add
     Name: 可以取名為ti-gdb
-    Path: /home/ericchen/ti-processor-sdk-linux-am57xx-evm-03.01.00.06/linux-devkit/sysroots/x86_64-arago-linux/usr/bin/arm-linux-gnueabihf-gdb
+    Path: /opt/ti-sdk-03.02/linux-devkit/sysroots/x86_64-arago-linux/usr/bin/arm-linux-gnueabihf-gdb
     
 Kits > Add
     Name: 可以取名為ti-processor
@@ -61,7 +61,7 @@ Kits > Add
     Environment: 把改好的kit-environment內容全部貼到此項目中
     Debugger: 選擇剛才自訂的Debugger(ti-gdb)
     Qt version: 選擇剛才自訂的Qt(ti-sdk)
-    Qt mkspec: /home/ericchen/ti-processor-sdk-linux-am57xx-evm-03.01.00.06/linux-devkit/sysroots/armv7ahf-neon-linux-gnueabi/usr/lib/qt5/mkspecs/linux-oe-g++
+    Qt mkspec: /opt/ti-sdk-03.02/linux-devkit/sysroots/armv7ahf-neon-linux-gnueabi/usr/lib/qt5/mkspecs/linux-oe-g++
 
 
 開啟專案(aphcontroller)

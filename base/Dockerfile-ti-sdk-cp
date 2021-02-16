@@ -1,0 +1,10 @@
+FROM qt_installer/finished
+
+
+# RUN wget http://software-dl.ti.com/processor-sdk-linux/esd/AM57X/03_01_00_06/exports/ti-processor-sdk-linux-am57xx-evm-03.01.00.06-Linux-x86-Install.bin 
+
+# RUN chmod +x ti-processor-sdk-linux-am57xx-evm-03.01.00.06-Linux-x86-Install.bin
+# CMD ./ti-processor-sdk-linux-am57xx-evm-03.01.00.06-Linux-x86-Install.bin
+COPY ./ti-sdk-03.02.zip /opt/
+RUN cd /opt/ && unzip /opt/ti-sdk-03.02.zip
+COPY ./qt.conf /opt/ti-sdk-03.02/linux-devkit/sysroots/x86_64-arago-linux/usr/bin/qt5/

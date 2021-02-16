@@ -1,0 +1,4 @@
+FROM qt_installer/finished
+
+COPY ./ti-sdk-03.02.zip /opt/
+RUN unzip /opt/ti-sdk-03.02.zip
